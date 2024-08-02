@@ -14,7 +14,7 @@ def main():
         st.write(data.head())
 
         if st.sidebar.button("Run Analysis"):
-            response = requests.post("http://localhost:8000/uploadfile/", files={"file": file_upload.getvalue()})
+            response = requests.post("http://0.0.0.0:4567/uploadfile/", files={"file": file_upload.getvalue()})
             if response.status_code == 200:
                 st.write("## Analysis Results")
                 st.write(response.json())
